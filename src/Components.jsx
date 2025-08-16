@@ -70,12 +70,56 @@ const Filter = () => {
 };
 
 const Graph = () => {
-    return (
-        <div className="p-4 bg-stone-800 rounded-xl mt-4">
-            <h2>Sales & Revenue</h2>
+  return (
+    <div className="p-4 bg-stone-800 rounded-xl w-3/5 flex justify-between items-center">
+      <h2>Sales & Revenue</h2>
+      <i class="fa-solid fa-ellipsis text-stone-300"></i>
+    </div>
+  );
+};
+
+const Chat = () => {
+  return (
+    <div className="flex flex-col w-2/5 bg-stone-800 rounded-xl p-4">
+      <div className="flex justify-between items-center">
+        <h3>Daily Feed</h3>
+        <p
+          className="text-sm bg-indigo-400 w-fit px-2 rounded-sm
+      "
+        >
+          Today
+        </p>
+      </div>
+      <div>
+        <ChatBubble />
+        <ChatBubble />
+        <ChatBubble />
+      </div>
+      <button className="w-full rounded-xl p-2 bg-indigo-400">Load More</button>
+    </div>
+  );
+};
+
+const ChatBubble = () => {
+  return (
+    <div className="flex justify-between gap-2 mt-4 border-b-1 border-b-stone-700 pb-4">
+      <div className="flex gap-2">
+        <img
+          src="./src/assets/img/profile_pic.jpg"
+          className="h-[40px] aspect-square object-cover rounded-full"
+        />
+        <div className="flex flex-col gap-1">
+          <p className="text-sm text-stone-300">
+            <span className="text-stone-100 font-medium">Jill</span> started
+            follwoing <span className="text-stone-100 font-medium">Johnny</span>
+          </p>
+          <p className="text-xs text-stone-400 font-light">Today 7:51 pm</p>
         </div>
-    )
+      </div>
+      <p className="font-light text-stone-300 text-xs">30m ago</p>
+    </div>
+  );
 };
 
 export default Header;
-export { StaticCard, DynamicCard, Filter, Graph };
+export { StaticCard, DynamicCard, Filter, Graph, Chat };

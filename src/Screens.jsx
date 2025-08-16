@@ -3,6 +3,7 @@ import Header, {
   DynamicCard,
   Filter,
   Graph,
+  Chat,
 } from "./Components.jsx";
 
 const DefaultDashboard = () => {
@@ -26,7 +27,10 @@ const DefaultDashboard = () => {
         <DynamicCard />
         <DynamicCard />
       </div>
-      <Graph />
+      <div className="flex mt-4 justify-between gap-4">
+        <Graph />
+        <Chat />
+      </div>
     </div>
   );
 };
