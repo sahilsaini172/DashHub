@@ -1,4 +1,4 @@
-import IconBtn from './Buttons.jsx'
+import IconBtn from "./Buttons.jsx";
 
 const Header = () => {
   return (
@@ -38,12 +38,12 @@ const StaticCard = () => {
   );
 };
 
-const DynamicCard = () => {
+const DynamicCard = ({ earnings = "", profit = true, percent = "5.35" }) => {
   return (
     <div className="flex flex-col bg-stone-800 rounded-xl p-4 text-stone-200 gap-1 h-full">
       <div className="flex justify-between items-center">
         <div>
-          <h2 className="font-medium">$ 19.100</h2>
+          <h2 className="font-medium">$ {earnings}</h2>
           <p className="text-sm">Total Earnings</p>
         </div>
         <div className="bg-stone-700 text-2xl text-indigo-400 rounded-full py-2 px-4 flex w-fit">
@@ -51,8 +51,13 @@ const DynamicCard = () => {
         </div>
       </div>
       <p className="text-sm text-stone-300">
-        <span className="text-xs px-2 rounded-sm bg-stone-700 text-green-400 inline-block">
-          +5.35%
+        <span
+          className={`text-xs px-2 rounded-sm bg-stone-700 ${
+            profit ? "text-green-400" : "text-red-400"
+          } inline-block`}
+        >
+          {profit ? "+" : "-"}
+          {percent}%
         </span>{" "}
         Since last week
       </p>
@@ -63,7 +68,7 @@ const DynamicCard = () => {
 const Filter = () => {
   return (
     <div className="bg-stone-800 text-stone-300 w-fit p-1 rounded-lg">
-      <IconBtn icon="calendar-days" size="sm"/>
+      <IconBtn icon="calendar-days" size="sm" />
       <select>
         <option value="Today">Today</option>
       </select>
