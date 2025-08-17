@@ -38,13 +38,18 @@ const StaticCard = () => {
   );
 };
 
-const DynamicCard = ({ earnings = "", profit = true, percent = "5.35" }) => {
+const DynamicCard = ({
+  title = "Total Earnings",
+  subTitle = "",
+  profit = true,
+  percent = "5.35",
+}) => {
   return (
     <div className="flex flex-col bg-stone-800 rounded-xl p-4 text-stone-200 gap-1 h-full">
       <div className="flex justify-between items-center">
         <div>
-          <h2 className="font-medium">$ {earnings}</h2>
-          <p className="text-sm">Total Earnings</p>
+          <h2 className="font-medium">{subTitle}</h2>
+          <p className="text-sm">{title}</p>
         </div>
         <div className="bg-stone-700 text-2xl text-indigo-400 rounded-full py-2 px-4 flex w-fit">
           $
