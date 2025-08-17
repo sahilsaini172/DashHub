@@ -7,6 +7,7 @@ import Header, {
 } from "./Components.jsx";
 
 import IconBtn from "./Buttons.jsx";
+import BarChart from "./Graph.jsx";
 
 const DefaultDashboard = () => {
   return (
@@ -41,7 +42,7 @@ function AnalyticsDashboard() {
   return (
     <div className="h-screen p-8 flex flex-col">
       <div className="flex items-center justify-between mb-4 text-stone-300">
-        <h1 className="text-2xl text-stone-200">Analytcis</h1>
+        <h1 className="text-2xl text-stone-200">Analytics</h1>
         <div className="flex gap-2 items-center">
           <Filter />
           <div className="bg-stone-800 w-fit p-1 rounded-lg">
@@ -73,6 +74,9 @@ function AnalyticsDashboard() {
           <h2>Real-Time</h2>
           <i class="fa-solid fa-ellipsis text-stone-300"></i>
         </div>
+      </div>
+      <div className="flex gap-4 mt-4">
+        <BarChart />
       </div>
     </div>
   );
