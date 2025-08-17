@@ -44,48 +44,22 @@ const BarChart = () => {
           <th className="w-1/5">Users</th>
           <th className="w-3/5">% Users</th>
         </tr>
-        <tr className="py-4 border-b-1 border-b-stone-700 flex justify-between">
-          <td className="w-1/5">en-us</td>
-          <td className="w-1/5">Users</td>
-          <td className="w-3/5 bg-stone-700 rounded-md overflow-hidden">
-            <div className="bg-indigo-500 w-[43%] text-center">43%</div>
-          </td>
-        </tr>
-        <tr className="py-4 border-b-1 border-b-stone-700 flex justify-between">
-          <td className="w-1/5">en-us</td>
-          <td className="w-1/5">Users</td>
-          <td className="w-3/5 bg-stone-700 rounded-md overflow-hidden">
-            <div className="bg-indigo-500 w-[43%] text-center">43%</div>
-          </td>
-        </tr>
-        <tr className="py-4 border-b-1 border-b-stone-700 flex justify-between">
-          <td className="w-1/5">en-us</td>
-          <td className="w-1/5">Users</td>
-          <td className="w-3/5 bg-stone-700 rounded-md overflow-hidden">
-            <div className="bg-indigo-500 w-[43%] text-center">43%</div>
-          </td>
-        </tr>
-        <tr className="py-4 border-b-1 border-b-stone-700 flex justify-between">
-          <td className="w-1/5">en-us</td>
-          <td className="w-1/5">Users</td>
-          <td className="w-3/5 bg-stone-700 rounded-md overflow-hidden">
-            <div className="bg-indigo-500 w-[43%] text-center">43%</div>
-          </td>
-        </tr>
-        <tr className="py-4 border-b-1 border-b-stone-700 flex justify-between">
-          <td className="w-1/5">en-us</td>
-          <td className="w-1/5">Users</td>
-          <td className="w-3/5 bg-stone-700 rounded-md overflow-hidden">
-            <div className="bg-indigo-500 w-[43%] text-center">43%</div>
-          </td>
-        </tr>
-        <tr className="py-4 flex justify-between">
-          <td className="w-1/5">en-us</td>
-          <td className="w-1/5">Users</td>
-          <td className="w-3/5 bg-stone-700 rounded-md overflow-hidden">
-            <div className="bg-indigo-500 w-[43%] text-center">43%</div>
-          </td>
-        </tr>
+        {data.map((item) => {
+          return (
+            <tr className="py-4 border-b-1 border-b-stone-700 flex justify-between">
+              <td className="w-1/5">{item.language}</td>
+              <td className="w-1/5">{item.users}</td>
+              <td className="w-3/5 bg-stone-700 rounded-md overflow-hidden">
+                <div
+                  className={`bg-indigo-500 text-center`}
+                  style={{ width: `${item.percent}%` }}
+                >
+                  {item.percent}%
+                </div>
+              </td>
+            </tr>
+          );
+        })}
       </table>
     </section>
   );
