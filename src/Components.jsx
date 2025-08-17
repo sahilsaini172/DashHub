@@ -1,16 +1,18 @@
+import IconBtn from './Buttons.jsx'
+
 const Header = () => {
   return (
     <div className="flex justify-between bg-stone-800 shadow shadow-stone-800 px-4 py-2">
       <div className="flex items-center gap-4">
-        <i class="fa-solid fa-bars text-xl text-stone-300"></i>
+        <IconBtn icon="bars" size="md" />
         <div className="bg-stone-700 p-2 rounded-lg flex items-center">
           <input type="text" placeholder="Search..." className="flex-1" />
-          <i className="fa-solid fa-magnifying-glass text-lg text-stone-300"></i>
+          <IconBtn icon="magnifying-glass" />
         </div>
       </div>
       <div className="flex items-center gap-4">
-        <i class="fa-solid fa-message text-lg text-stone-300"></i>
-        <i class="fa-solid fa-bell-slash text-lg text-stone-300"></i>
+        <IconBtn icon="message" size="md" />
+        <IconBtn icon="bell-slash" size="md" />
         <div className="flex gap-2 items-center">
           <img
             src="./src/assets/img/profile_pic.jpg"
@@ -60,8 +62,8 @@ const DynamicCard = () => {
 
 const Filter = () => {
   return (
-    <div className="bg-stone-800 text-stone-300 w-fit p-1 rounded-lg text-sm">
-      <i class="fa-solid fa-calendar-days"></i>
+    <div className="bg-stone-800 text-stone-300 w-fit p-1 rounded-lg">
+      <IconBtn icon="calendar-days" size="sm"/>
       <select>
         <option value="Today">Today</option>
       </select>

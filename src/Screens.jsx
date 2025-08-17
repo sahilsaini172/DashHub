@@ -6,6 +6,8 @@ import Header, {
   Chat,
 } from "./Components.jsx";
 
+import IconBtn from "./Buttons.jsx";
+
 const DefaultDashboard = () => {
   return (
     <div className="h-screen p-8 flex flex-col">
@@ -13,11 +15,11 @@ const DefaultDashboard = () => {
         <h1 className="text-2xl text-stone-200">Dashboard</h1>
         <div className="flex gap-2 items-center">
           <Filter />
-          <div className="bg-stone-800 w-fit p-1 rounded-lg text-sm">
-            <i class="fa-solid fa-filter"></i>
+          <div className="bg-stone-800 w-fit p-1 rounded-lg">
+            <IconBtn icon="filter" size="sm"/>
           </div>
-          <div className="bg-stone-800 w-fit p-1 rounded-lg text-sm">
-            <i class="fa-solid fa-arrows-rotate"></i>
+          <div className="bg-stone-800 w-fit p-1 rounded-lg">
+            <IconBtn icon="arrows-rotate" size="sm"/>
           </div>
         </div>
       </div>
