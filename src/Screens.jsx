@@ -77,15 +77,208 @@ function AnalyticsDashboard() {
       </div>
       <div className="flex gap-4 mt-4">
         <BarChart />
+        <BarChart />
+        <BarChart />
       </div>
     </div>
   );
 }
 function SaasDashboard() {
-  return <div className="text-2xl font-bold">Saas Dashboard</div>;
+  return (
+    <div className="h-screen p-8 flex flex-col">
+      <div className="flex items-center justify-between mb-4 text-stone-300">
+        <h1 className="text-2xl text-stone-200">SaaS</h1>
+        <div className="flex gap-2 items-center">
+          <Filter />
+          <div className="bg-stone-800 w-fit p-1 rounded-lg">
+            <IconBtn icon="filter" size="sm" />
+          </div>
+          <div className="bg-stone-800 w-fit p-1 rounded-lg">
+            <IconBtn icon="arrows-rotate" size="sm" />
+          </div>
+        </div>
+      </div>
+      <div className="grid grid-cols-4 grid-rows-1 gap-4">
+        <DynamicCard title="Income" subTitle="$37.200" percent="6.45" />
+        <DynamicCard
+          title="Orders"
+          subTitle="3.231"
+          percent="4.21"
+          profit={false}
+        />
+        <DynamicCard title="Activity" subTitle="12.231" percent="7.45" />
+        <StaticCard />
+      </div>
+      <div className="flex gap-4 mt-4">
+        <BarChart />
+        <BarChart />
+        <BarChart />
+      </div>
+      <div className="flex flex-col mt-4 bg-stone-800 rounded-2xl p-4 gap-4">
+        <div className="flex justify-between items-center">
+          <h2>Top Selling Products</h2>
+          <i class="fa-solid fa-ellipsis text-stone-300"></i>
+        </div>
+        <table className="text-left text-sm font-medium text-stone-300">
+          <tr className="*:py-2 border-b border-b-stone-500">
+            <th>Name</th>
+            <th>Company</th>
+            <th>Assigned</th>
+            <th className="text-right pr-3">Orders</th>
+            <th>Status</th>
+          </tr>
+          <tr className="*:py-2 font-light">
+            <td className="flex gap-2 items-center">
+              <div className="p-2 rounded-lg bg-stone-700 w-fit">
+                <IconBtn size="sm" icon="bell-slash" style="500" />
+              </div>
+              <div className="flex flex-col font-normal">
+                <h2>Aurora</h2>
+                <p className="font-light text-xs">UI Kit</p>
+              </div>
+            </td>
+            <td>
+              <div className="flex flex-col font-normal">
+                <h2>Gantos</h2>
+                <p className="font-light text-xs">Real Estate</p>
+              </div>
+            </td>
+            <td>
+              <div className="flex flex-col font-normal">
+                <h2>John Doe</h2>
+                <p className="font-light text-xs">HTML, JS, React</p>
+              </div>
+            </td>
+            <td className="text-right pr-3">453</td>
+            <td>
+              <span className="inline-block bg-green-500 px-1 rounded-lg text-white">
+                In progress
+              </span>
+            </td>
+          </tr>
+          <tr className="*:py-2 font-light">
+            <td className="flex gap-2 items-center">
+              <div className="p-2 rounded-lg bg-stone-700 w-fit">
+                <IconBtn size="sm" icon="bell-slash" style="500" />
+              </div>
+              <div className="flex flex-col font-normal">
+                <h2>Aurora</h2>
+                <p className="font-light text-xs">UI Kit</p>
+              </div>
+            </td>
+            <td>
+              <div className="flex flex-col font-normal">
+                <h2>Gantos</h2>
+                <p className="font-light text-xs">Real Estate</p>
+              </div>
+            </td>
+            <td>
+              <div className="flex flex-col font-normal">
+                <h2>John Doe</h2>
+                <p className="font-light text-xs">HTML, JS, React</p>
+              </div>
+            </td>
+            <td className="text-right pr-3">453</td>
+            <td>
+              <span className="inline-block bg-green-500 px-1 rounded-lg text-white">
+                In progress
+              </span>
+            </td>
+          </tr>
+          <tr className="*:py-2 font-light">
+            <td className="flex gap-2 items-center">
+              <div className="p-2 rounded-lg bg-stone-700 w-fit">
+                <IconBtn size="sm" icon="bell-slash" style="500" />
+              </div>
+              <div className="flex flex-col font-normal">
+                <h2>Aurora</h2>
+                <p className="font-light text-xs">UI Kit</p>
+              </div>
+            </td>
+            <td>
+              <div className="flex flex-col font-normal">
+                <h2>Gantos</h2>
+                <p className="font-light text-xs">Real Estate</p>
+              </div>
+            </td>
+            <td>
+              <div className="flex flex-col font-normal">
+                <h2>John Doe</h2>
+                <p className="font-light text-xs">HTML, JS, React</p>
+              </div>
+            </td>
+            <td className="text-right pr-3">453</td>
+            <td>
+              <span className="inline-block bg-green-500 px-1 rounded-lg text-white">
+                In progress
+              </span>
+            </td>
+          </tr>
+          <tr className="*:py-2 font-light">
+            <td className="flex gap-2 items-center">
+              <div className="p-2 rounded-lg bg-stone-700 w-fit">
+                <IconBtn size="sm" icon="bell-slash" style="500" />
+              </div>
+              <div className="flex flex-col font-normal">
+                <h2>Aurora</h2>
+                <p className="font-light text-xs">UI Kit</p>
+              </div>
+            </td>
+            <td>
+              <div className="flex flex-col font-normal">
+                <h2>Gantos</h2>
+                <p className="font-light text-xs">Real Estate</p>
+              </div>
+            </td>
+            <td>
+              <div className="flex flex-col font-normal">
+                <h2>John Doe</h2>
+                <p className="font-light text-xs">HTML, JS, React</p>
+              </div>
+            </td>
+            <td className="text-right pr-3">453</td>
+            <td>
+              <span className="inline-block bg-green-500 px-1 rounded-lg text-white">
+                In progress
+              </span>
+            </td>
+          </tr>
+          <tr className="*:py-2 font-light">
+            <td className="flex gap-2 items-center">
+              <div className="p-2 rounded-lg bg-stone-700 w-fit">
+                <IconBtn size="sm" icon="bell-slash" style="500" />
+              </div>
+              <div className="flex flex-col font-normal">
+                <h2>Aurora</h2>
+                <p className="font-light text-xs">UI Kit</p>
+              </div>
+            </td>
+            <td>
+              <div className="flex flex-col font-normal">
+                <h2>Gantos</h2>
+                <p className="font-light text-xs">Real Estate</p>
+              </div>
+            </td>
+            <td>
+              <div className="flex flex-col font-normal">
+                <h2>John Doe</h2>
+                <p className="font-light text-xs">HTML, JS, React</p>
+              </div>
+            </td>
+            <td className="text-right pr-3">453</td>
+            <td>
+              <span className="inline-block bg-green-500 px-1 rounded-lg text-white">
+                In progress
+              </span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  );
 }
 function SocialDashboard() {
-  return <div className="text-2xl font-bold">Social Dashboard</div>;
+  return <div className="flex"></div>;
 }
 
 export default DefaultDashboard;
