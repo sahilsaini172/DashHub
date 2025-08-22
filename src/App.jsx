@@ -2,6 +2,7 @@ import DefaultDashboard, {
   AnalyticsDashboard,
   SocialDashboard,
   SaasDashboard,
+  CryptoDashboard
 } from "./Screens.jsx";
 import Header from "./Components.jsx";
 import { useState } from "react";
@@ -17,6 +18,8 @@ function App() {
         return <SaasDashboard />;
       case "social":
         return <SocialDashboard />;
+      case "crypto":
+        return <CryptoDashboard />;
       default:
         return <DefaultDashboard />;
     }
@@ -28,6 +31,7 @@ function App() {
         <button onClick={() => setScreen("analytics")}>Analytics</button>
         <button onClick={() => setScreen("saas")}>SaaS</button>
         <button onClick={() => setScreen("social")}>Social</button>
+        <button onClick={() => setScreen("crypto")}>Crypto</button>
       </header>
       <Header />
       {renderScreen()}

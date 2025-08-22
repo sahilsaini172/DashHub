@@ -4,10 +4,19 @@ import Header, {
   Filter,
   Graph,
   Chat,
+  Post,
+  Profile,
+  Following,
+  Activities,
+  CryptoCard,
+  Markets,
 } from "./Components.jsx";
+
+import CandleChart from "./CandleChart.jsx";
 
 import IconBtn from "./Buttons.jsx";
 import BarChart from "./Graph.jsx";
+import CandlestickChart from "./CandleChart.jsx";
 
 const DefaultDashboard = () => {
   return (
@@ -277,9 +286,54 @@ function SaasDashboard() {
     </div>
   );
 }
+
 function SocialDashboard() {
-  return <div className="flex"></div>;
+  return (
+    <div className="flex my-4 gap-4 mx-20">
+      <div className="p-4 bg-stone-800 flex flex-col rounded-2xl w-4/5">
+        <Post />
+        <Post img={false} comment={false} />
+        <Post img={true} comment={false} />
+        <Post img={false} comment={true} />
+      </div>
+      <div className="flex flex-col rounded-2xl w-1/5 gap-4">
+        <Profile />
+        <Following />
+        <Activities />
+      </div>
+    </div>
+  );
 }
 
+const CryptoDashboard = () => {
+  return (
+    <div className="h-screen p-8 flex flex-col">
+      <div className="flex items-center justify-between mb-4 text-stone-300">
+        <h1 className="text-2xl text-stone-200">SaaS</h1>
+        <div className="flex gap-2 items-center">
+          <Filter />
+          <div className="bg-stone-800 w-fit p-1 rounded-lg">
+            <IconBtn icon="filter" size="sm" />
+          </div>
+          <div className="bg-stone-800 w-fit p-1 rounded-lg">
+            <IconBtn icon="arrows-rotate" size="sm" />
+          </div>
+        </div>
+      </div>
+      <div className="grid grid-cols-5 grid-rows-1 gap-2">
+        <CryptoCard icon="bitcoin-sign" />
+        <CryptoCard icon="bitcoin-sign" />
+        <CryptoCard />
+        <CryptoCard icon="bitcoin-sign" />
+        <CryptoCard />
+      </div>
+      <div className="flex gap-4 mt-4">
+        <Markets />
+        <CandleChart/>
+      </div>
+    </div>
+  );
+};
+
 export default DefaultDashboard;
-export { AnalyticsDashboard, SaasDashboard, SocialDashboard };
+export { AnalyticsDashboard, SaasDashboard, SocialDashboard, CryptoDashboard };

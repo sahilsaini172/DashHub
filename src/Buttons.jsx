@@ -5,7 +5,9 @@ const IconBtn = ({ icon, size = "md", style = "" }) => {
     lg: "text-xl",
   };
   return (
-    <i className={`fa-solid fa-${icon} ${sizeClass[size]} text-stone-300 `}></i>
+    <div className="text-stone-300 w-fit inline-block">
+      <i className={`fa-solid fa-${icon} ${sizeClass[size]} ${style} `}></i>
+    </div>
   );
 };
 
