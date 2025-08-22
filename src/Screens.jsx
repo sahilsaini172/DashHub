@@ -10,13 +10,14 @@ import Header, {
   Activities,
   CryptoCard,
   Markets,
+  Operations,
+  BuyOrder
 } from "./Components.jsx";
 
 import CandleChart from "./CandleChart.jsx";
 
 import IconBtn from "./Buttons.jsx";
 import BarChart from "./Graph.jsx";
-import CandlestickChart from "./CandleChart.jsx";
 
 const DefaultDashboard = () => {
   return (
@@ -330,6 +331,11 @@ const CryptoDashboard = () => {
       <div className="flex gap-4 mt-4">
         <Markets />
         <CandleChart/>
+      </div>
+      <div className="flex gap-4 mt-4">
+        <Operations/>
+        <BuyOrder/>
+        <BuyOrder title="Sell Orders"/>
       </div>
     </div>
   );

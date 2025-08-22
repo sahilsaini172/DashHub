@@ -321,10 +321,10 @@ const Markets = () => {
     { coin: "MATIC", price: "3.12", volume: "456.71", change: "-0.98" },
   ];
 
-  function ChangeCell({value}) {
+  function ChangeCell({ value }) {
     const num = Number(String(value).replace(/^\+/, "").trim());
-    const color = num >0 ? "text-green-500" : num<0? "text-red-500": "";
-    return <span className={color}>{value}</span>
+    const color = num > 0 ? "text-green-500" : num < 0 ? "text-red-500" : "";
+    return <span className={color}>{value}</span>;
   }
 
   return (
@@ -353,7 +353,9 @@ const Markets = () => {
               <td>{item.price}</td>
               <td>{item.volume}</td>
 
-              <td><ChangeCell value={item.change}/></td>
+              <td>
+                <ChangeCell value={item.change} />
+              </td>
             </td>
           );
         })}
@@ -361,6 +363,89 @@ const Markets = () => {
     </div>
   );
 };
+
+function Operations() {
+  return (
+    <div className="flex flex-col bg-stone-800 p-4 rounded-2xl w-1/5">
+      <div className="flex justify-between items-center mb-2">
+        <h2>Markets</h2>
+        <div className="p-1 rounded-xl bg-stone-700 flex gap-1 text-sm justify-between items-center">
+          <button className="p-1 bg-indigo-500 rounded-lg">Buy</button>
+          <button className="p-1 rounded-lg">Sell</button>
+          <button className="p-1 rounded-lg">Send</button>
+        </div>
+      </div>
+      <form className="flex flex-col">
+        <label className="text-sm text-stone-300 mb-2">Place new order:</label>
+        <div className="text-sm flex rounded-lg mb-3 bg-stone-700 border border-stone-600 overflow-hidden">
+          <button className="bg-stone-600 p-2">Amount</button>
+          <select className="px-2 border-r p-2 border-r-stone-600">
+            <option value="BTC">BTC</option>
+          </select>
+          <input type="text" className="flex-1 px-2" placeholder="0.23" />
+        </div>
+        <div className="text-sm rounded-lg flex bg-stone-700 border border-stone-600 overflow-hidden">
+          <button className="bg-stone-600 p-2">Price</button>
+          <input type="text" className="flex-1 px-2" placeholder="34,321.04" />
+          <button className="bg-stone-600 px-4">$</button>
+        </div>
+        <div className="text-sm rounded-lg mt-3 flex bg-stone-700 border border-stone-600 overflow-hidden">
+          <button className="bg-stone-600 p-2">Total</button>
+          <input type="text" className="flex-1 px-2" placeholder="4,321.04" />
+          <button className="bg-stone-600 px-4">$</button>
+        </div>
+        <button className="bg-indigo-500 mt-4 rounded-xl p-2">
+          Process to wallet
+        </button>
+        <p className="text-sm text-stone-400 mt-4">
+          The final amount could change depending on current market conditions.
+        </p>
+      </form>
+    </div>
+  );
+}
+
+function BuyOrder({ title = "Buy Orders" }) {
+  const data = [
+    { value1: 0.4323023, value2: 0.9834129, value3: 0.1283947 },
+    { value1: 0.6532109, value2: 0.3029843, value3: 0.7621981 },
+    { value1: 0.4310294, value2: 0.967211, value3: 0.5938274 },
+    { value1: 0.1258392, value2: 0.845392, value3: 0.2719384 },
+    { value1: 0.3892048, value2: 0.5810293, value3: 0.7429102 },
+    { value1: 0.9183746, value2: 0.3429103, value3: 0.109482 },
+    { value1: 0.4528371, value2: 0.2837465, value3: 0.8029384 },
+    { value1: 0.6738294, value2: 0.5392018, value3: 0.1029384 },
+    { value1: 0.8940213, value2: 0.7391028, value3: 0.4829102 },
+    { value1: 0.1293847, value2: 0.6539201, value3: 0.238471 },
+  ];
+
+  return (
+    <div className="flex flex-col bg-stone-800 p-4 rounded-2xl w-2/5">
+      <div className="flex justify-between items-center mb-2">
+        <h2>Buy Orders</h2>
+        <button className="p-2 text-sm bg-stone-700 rounded-lg">
+          View all
+        </button>
+      </div>
+      <table className="text-sm text-left font-light text-stone-100">
+        <tr className="*:py-2">
+          <th>Price</th>
+          <th>BTC</th>
+          <th>Sum(BTC)</th>
+        </tr>
+        {data.map((item) => {
+          return (
+            <tr className="*:py-1">
+              <td>{item.value1}</td>
+              <td>{item.value2}</td>
+              <td>{item.value3}</td>
+            </tr>
+          );
+        })}
+      </table>
+    </div>
+  );
+}
 
 export default Header;
 export {
@@ -375,4 +460,6 @@ export {
   Activities,
   CryptoCard,
   Markets,
+  Operations,
+  BuyOrder,
 };
